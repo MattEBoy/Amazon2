@@ -1,35 +1,46 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model IQueryable<Book>
+@model BookListViewModel
+@*Boostrap is used to organize the items in the list and make them look good (similar to what is done in the videos and textbook*@
+@*Don't know if I can claim this looks beautiful, but I tried*@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
-    <table class="table-striped tbody tr:nth-of-type(odd)">
+    <div class="card-title">
+        <div class="accordion">
+            <table class="table-striped tbody tr:nth-of-type(odd)">
 
-        <thead class="thead-dark">
-            <tr>
+                <thead class="thead-dark">
+                    <tr class="col-xl-9">
 
-                <td class="table-sm">Title</td>
-                <td class="table-sm">Author</td>
-                <td class="table-sm">Publisher</td>
-                <td class="table-sm">Category</td>
-                <td class="table-sm">ISBN</td>
-                <td class="table-sm">Price</td>
-            </tr>
-        </thead>
-        @foreach (Book b in Model)
-        {
-            <tr>
+                        <td class="table-sm">Title</td>
+                        <td class="table-sm">Author</td>
+                        <td class="table-sm">Publisher</td>
+                        <td class="table-sm">Category</td>
+                        <td class="table-sm">ISBN</td>
+                        <td class="table-sm">Total Pages</td>
+                        <td class="table-sm">Price</td>
+                    </tr>
+                </thead>
+                @foreach (Book b in Model.Books)
+                {
+                    <tr class="col-xl-9">
 
-                <td class="table-sm">@b.Title</td>
-                <td class="table-sm">@b.AuthorLastName, @b.AuthorFirstName @b.AuthorMiddleInitial</td>
-                <td class="table-sm">@b.Publisher</td>
-                <td class="table-sm">@b.ClassificationCategory</td>
-                <td class="table-sm">@b.ISBN</td>
-                <td class="table-sm">$@b.Price</td>
-            </tr>
+                        <td class="table-sm">@b.Title</td>
+                        <td class="table-sm">@b.AuthorLastName, @b.AuthorFirstName @b.AuthorMiddleInitial</td>
+                        <td class="table-sm">@b.Publisher</td>
+                        <td class="table-sm">@b.ClassificationCategory</td>
+                        <td class="table-sm">@b.ISBN</td>
+                        <td class="table-sm">@b.TotalPages</td>
+                        <td class="table-sm">$@b.Price</td>
+                    </tr>
 
-        }
-    </table>
+                }
+            </table>
+        </div>
+    </div>
+
+
+    <div page-model="@Model.PagingInfo" page-action="Index"></div>
 </div>

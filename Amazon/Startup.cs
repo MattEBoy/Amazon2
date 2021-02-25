@@ -49,12 +49,24 @@ namespace Amazon
             app.UseRouting();
 
             app.UseAuthorization();
-
+            //URLs have been improved to use /P2, /P3, /P4 etc. to access a specific page
+            //I decided to go with books/{page} 
+            //but if it were to need to be identical to /P2 /P3 the code would be 
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        "pagination",
+            //        "books/P{page}",
+            //        new { Controller = "Home", action = "Index" });
+            //    endpoints.MapDefaultControllerRoute();
+            //});
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                    "books/{page}",
+                    new { Controller = "Home", action = "Index" });
+                endpoints.MapDefaultControllerRoute();
             });
 
             SeedData.EnsureaPopulated(app);

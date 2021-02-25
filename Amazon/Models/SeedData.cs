@@ -31,7 +31,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Signet",
                         Price = 9.95m,
-                        ClassificationCategory = "Fiction, Classic"
+                        ClassificationCategory = "Fiction, Classic",
+                        TotalPages = 1488
                     },
                     new Book
                     {
@@ -42,8 +43,11 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "Kearns",
                         Publisher = "Simon & Schuster",
                         Price = 14.58m,
-                        ClassificationCategory = "Non-Fiction, Biography"
+                        ClassificationCategory = "Non-Fiction, Biography",
+                        TotalPages = 944
+
                     },
+
                     new Book
                     {
                         ISBN = "978-0553384611",
@@ -53,7 +57,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Bantam",
                         Price = 21.54m,
-                        ClassificationCategory = "Non-Fiction, Biography"
+                        ClassificationCategory = "Non-Fiction, Biography",
+                        TotalPages = 832
                     },
                     new Book
                     {
@@ -64,7 +69,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "C.",
                         Publisher = "Random House",
                         Price = 11.61m,
-                        ClassificationCategory = "Non-Fiction, Biography"
+                        ClassificationCategory = "Non-Fiction, Biography",
+                        TotalPages = 864
                     },
                     new Book
                     {
@@ -75,7 +81,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Random House",
                         Price = 13.33m,
-                        ClassificationCategory = "Non-Fiction, Historical"
+                        ClassificationCategory = "Non-Fiction, Historical",
+                        TotalPages = 528
                     },
                     new Book
                     {
@@ -86,7 +93,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Vintage",
                         Price = 15.95m,
-                        ClassificationCategory = "Fiction, Historical Fiction"
+                        ClassificationCategory = "Fiction, Historical Fiction",
+                        TotalPages = 288
                     },
                     new Book
                     {
@@ -97,7 +105,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Grand Central Publishing",
                         Price = 14.99m,
-                        ClassificationCategory = "Non-Fiction, Self-Help"
+                        ClassificationCategory = "Non-Fiction, Self-Help",
+                        TotalPages = 304
                     },
                     new Book
                     {
@@ -108,7 +117,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Grand Central Publishing",
                         Price = 21.66m,
-                        ClassificationCategory = "Non-Fiction, Self-Help"
+                        ClassificationCategory = "Non-Fiction, Self-Help",
+                        TotalPages = 240
                     },
                     new Book
                     {
@@ -119,7 +129,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Portfolio",
                         Price = 29.16m,
-                        ClassificationCategory = "Non-Fiction, Business"
+                        ClassificationCategory = "Non-Fiction, Business",
+                        TotalPages = 400
                     },
                     new Book
                     {
@@ -130,9 +141,48 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Bantam",
                         Price = 15.03m,
-                        ClassificationCategory = "Fiction, Thrillers"
+                        ClassificationCategory = "Fiction, Thrillers",
+                        TotalPages = 642
+                    },
+                    //Three new books have been added to the database through the Seed Data
+                    new Book
+                    {
+                        ISBN = "978-0142417447",
+                        Title = "The Ruins of Gorlan: Book 1 (Ranger's Apprentice)",
+                        AuthorFirstName = "John",
+                        AuthorLastName = "Flanagan",
+                        AuthorMiddleInitial = "",
+                        Publisher = "Penguin Group (USA) LLC",
+                        Price = 8.29m,
+                        ClassificationCategory = "Fantasy Fiction, Adventure Fiction",
+                        TotalPages = 268
+                    },
+                    new Book
+                    {
+                        ISBN = "978-0765376671",
+                        Title = "The Way of Kings: The Stormlight Archive Book One",
+                        AuthorFirstName = "Brandon",
+                        AuthorLastName = "Sanderson",
+                        AuthorMiddleInitial = "",
+                        Publisher = "Tor Books",
+                        Price = 14.79m,
+                        ClassificationCategory = "High Fantasy",
+                        TotalPages = 1005
+                    },
+                    //this last one is pretty good.
+                    new Book
+                    {
+                        ISBN = "978-0385519472",
+                        Title = "Book of Mormon",
+                        AuthorFirstName = "Various Authors",
+                        AuthorLastName = "",
+                        AuthorMiddleInitial = "",
+                        Publisher = "The Church of Jesus Christ of Latter Day Saints",
+                        Price = 15.99m,
+                        ClassificationCategory = "Sacred Text",
+                        TotalPages = 779
                     }
-                ) ;
+                );
                 context.SaveChanges();
             }
         }
