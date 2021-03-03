@@ -25,17 +25,11 @@
                 </thead>
                 @foreach (Book b in Model.Books)
                 {
-                    <tr class="col-xl-9">
+                    <partial name="BookSummary" model="b" />
 
-                        <td class="table-sm">@b.Title</td>
-                        <td class="table-sm">@b.AuthorLastName, @b.AuthorFirstName @b.AuthorMiddleInitial</td>
-                        <td class="table-sm">@b.Publisher</td>
-                        <td class="table-sm">@b.ClassificationCategory</td>
-                        <td class="table-sm">@b.ISBN</td>
-                        <td class="table-sm">@b.TotalPages</td>
-                        <td class="table-sm">$@b.Price</td>
-                    </tr>
-
-        }
-    </table>
+                }
+            </table>
+            <div page-model="@Model.PagingInfo" page-action="Index"></div>
+        </div>
+    </div>
 </div>
