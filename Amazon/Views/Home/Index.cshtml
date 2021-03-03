@@ -5,7 +5,7 @@
 @*Boostrap is used to organize the items in the list and make them look good (similar to what is done in the videos and textbook*@
 @*Don't know if I can claim this looks beautiful, but I tried*@
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Books</h1>
 
     <div class="card-title">
         <div class="accordion">
@@ -14,13 +14,13 @@
                 <thead class="thead-dark">
                     <tr class="col-xl-9">
 
-                        <td class="table-sm">Title</td>
-                        <td class="table-sm">Author</td>
-                        <td class="table-sm">Publisher</td>
-                        <td class="table-sm">Category</td>
-                        <td class="table-sm">ISBN</td>
-                        <td class="table-sm">Total Pages</td>
-                        <td class="table-sm">Price</td>
+                        <td class="table-sm"><b>Title</b></td>
+                        <td class="table-sm"><b>Author</b></td>
+                        <td class="table-sm"><b>Publisher</b></td>
+                        <td class="table-sm"><b>Category</b></td>
+                        <td class="table-sm"><b>ISBN</b></td>
+                        <td class="table-sm"><b>Total Pages</b></td>
+                        <td class="table-sm"><b>Price</b></td>
                     </tr>
                 </thead>
                 @foreach (Book b in Model.Books)
@@ -29,7 +29,14 @@
 
                 }
             </table>
-            <div page-model="@Model.PagingInfo" page-action="Index"></div>
+            <div page-model="@Model.PagingInfo" 
+                 page-action="Index"                   
+                 page-classes-enabled="true" 
+                 page-class="btn"
+                 page-class-normal="btn-outline-dark" 
+                 page-class-selected="btn-primary" 
+                 class="btn-group pull-right m-1"
+                 page-url-category="@Model.Category"></div>
         </div>
     </div>
 </div>

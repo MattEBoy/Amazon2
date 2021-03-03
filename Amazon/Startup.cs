@@ -63,11 +63,21 @@ namespace Amazon
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    "categpage",
+                    "category/{category}/books/{page:int}",
+                     new { Controller = "Home", action = "Index" });
+                endpoints.MapControllerRoute(
+                    "categ",
+                    "category/{category}",
+                     new { Controller = "Home", action = "Index", page = 1});
+
+                endpoints.MapControllerRoute(
                     "pagination",
                     "books/{page}",
                     new { Controller = "Home", action = "Index" });
                 endpoints.MapDefaultControllerRoute();
             });
+
 
             SeedData.EnsureaPopulated(app);
         }

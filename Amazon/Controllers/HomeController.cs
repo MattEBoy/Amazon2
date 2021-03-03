@@ -21,14 +21,14 @@ namespace Amazon.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
 
             //Program uses tag helpers to dynamically create the page navigation and displays 5 items per page
             return View(new BookListViewModel
             {
                 Books = _repository.Books
-                    .OrderBy(b => b.BookID).Skip((page - 1) * PageSize).Take(PageSize)
+                    .Where(b => category == null || b.ClassificationCategory.Contains(category)).OrderBy(b => b.BookID).Skip((page - 1) * PageSize).Take(PageSize)
                     ,
                 PagingInfo = new PagingInfo
                 {
@@ -36,8 +36,12 @@ namespace Amazon.Controllers
                         ,
                     ItemsPerPage = PageSize
                         ,
-                    TotalNumItems = _repository.Books.Count()
+                    TotalNumItems = _repository.Books.Where(b => category == null || b.ClassificationCategory.Contains(category)).Count()
+                        
+                    
                 }
+                ,
+                Category = category
             }) ;
         }
 
