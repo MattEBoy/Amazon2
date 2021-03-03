@@ -1,0 +1,12 @@
+﻿@model Book
+
+<tr class="col-xl-9">
+
+    <td class="table-sm">@Model.Title</td>
+    <td class="table-sm">@Model.AuthorLastName, @Model.AuthorFirstName @Model.AuthorMiddleInitial</td>
+    <td class="table-sm">@Model.Publisher</td>
+    <td class="table-sm">@Model.ClassificationCategory</td>
+    <td class="table-sm">@Model.ISBN</td>
+    <td class="table-sm">@Model.TotalPages</td>
+    <td class="table-sm">$@Model.Price</td>
+</tr>
