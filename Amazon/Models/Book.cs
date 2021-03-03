@@ -19,6 +19,8 @@ namespace Amazon.Models
         public string Publisher { get; set; }
         public decimal Price { get; set; }
         public string ClassificationCategory { get; set; }
+        //Model has been updated to include the number of pages, and that data is reflected in the database
+        public int TotalPages { get; set; }
 
 
         //public Book(string title, string authorfn, string authorln, string authormi, string publisher, string isbn, decimal price, string category)
