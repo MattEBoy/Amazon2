@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<string>
-
-@foreach(string category in Model)
+@*this is the code for the filters*@
+@*Navigation allows user to click on category and filter results*@
+@foreach (string category in Model)
 {
+    @*Clicking on a category causes that category to be highlighted*@
+    @*When a category is selected, it appears in the URL.*@
     <a class="btn btn-block  @(category == @ViewBag.SelectedCategory? "btn-primary" : "btn-outline-secondary")"
        asp-action="Index"
        asp-controller="Home"

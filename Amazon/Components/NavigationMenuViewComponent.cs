@@ -4,9 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+//Category menu is inserted into the view by using a View Component
+//View Component partial view created and inserted via the ViewComponent
 namespace Amazon.Components
 {
+    //this view helps out with the filters tab
     public class NavigationMenuViewComponent : ViewComponent
     {
 

@@ -62,10 +62,12 @@ namespace Amazon
             //});
             app.UseEndpoints(endpoints =>
             {
+                //As in the example, modify the Endpoints so that the user can add something like "/Books/Autobiography" onto the URL and get results. (NOTE: Does not need to follow that specific path.) (see below)
                 endpoints.MapControllerRoute(
                     "categpage",
                     "category/{category}/books/{page:int}",
                      new { Controller = "Home", action = "Index" });
+                //The app has the built -in functionality to filter by adding an argument to the controller(i.e. "/?category=autobiography) for the category (see below)
                 endpoints.MapControllerRoute(
                     "categ",
                     "category/{category}",

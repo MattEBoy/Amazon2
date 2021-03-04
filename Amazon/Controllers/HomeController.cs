@@ -27,6 +27,7 @@ namespace Amazon.Controllers
             //Program uses tag helpers to dynamically create the page navigation and displays 5 items per page
             return View(new BookListViewModel
             {
+                //superior filter on "like"
                 Books = _repository.Books
                     .Where(b => category == null || b.ClassificationCategory.Contains(category)).OrderBy(b => b.BookID).Skip((page - 1) * PageSize).Take(PageSize)
                     ,
@@ -36,13 +37,15 @@ namespace Amazon.Controllers
                         ,
                     ItemsPerPage = PageSize
                         ,
+                    //superior filter on "like"
+                    //Page numbering matches results
                     TotalNumItems = _repository.Books.Where(b => category == null || b.ClassificationCategory.Contains(category)).Count()
-                        
-                    
+
+
                 }
                 ,
                 Category = category
-            }) ;
+            });
         }
 
         public IActionResult Privacy()
