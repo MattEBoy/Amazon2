@@ -1,4 +1,5 @@
-﻿using Amazon.Models;
+﻿using Amazon.Infrastructure;
+using Amazon.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

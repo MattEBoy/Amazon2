@@ -9,7 +9,7 @@ namespace Amazon.Models
     {
         public List<CartLine> Lines { get; set; } = new List<CartLine>();
 
-        public void AddItem(Book _book, int _quantity)
+        public virtual void AddItem(Book _book, int _quantity)
         {
             CartLine line = Lines
                 .Where(c => c.Book.BookID == _book.BookID)
@@ -30,16 +30,19 @@ namespace Amazon.Models
                 line.Quantity += _quantity;
             }
         }
-        public void RemoveLine(Book _book) =>
+        public virtual void RemoveLine(Book _book) =>
             Lines.RemoveAll(c => c.Book.BookID == _book.BookID);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
 
         public decimal ComputeCartTotal()
         {
             return Lines.Sum(c => c.Book.Price * c.Quantity);
         }
-
+        public int ComputeItemCount()
+        {
+            return Lines.Sum(c => c.Quantity);
+        }
         public class CartLine
         {
             public int CartLineID { get; set; }

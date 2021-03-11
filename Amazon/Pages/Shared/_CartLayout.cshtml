@@ -14,7 +14,18 @@
     <div class="m-1 p-1">
         @RenderBody()
     </div>
-    
+    <form id="clear" asp-page="/Cart" method="post">
+        <input type="hidden" name="BookID" value="" />
+        <input type="hidden" name="returnUrl" value="" />
+        <input type="hidden" name="type" value="clear" />
+
+        <span class="card-text p-1">
+            @*@Model.Title*@
+            <button type="submit" class="btn-success btn-sm pull-right" sylte="float:right">Clear Cart</button>
+        </span>
+    </form>
 </body>
+
+
 
 </html>

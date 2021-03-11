@@ -6,17 +6,29 @@
     <title>@ViewData["Title"] - Amazon</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-@*two columns one of width 3 and one of width 9*@
-    <div class="row m-1 p-1">
+    <div class="row m-1 p-2">
         <div class="col-3">
-            <h1 class="display-4">Filters</h1>
+            <h1 class="display-4">Amazon</h1>
+
+        </div>
+        <div class="col-9 text-right">
+            <vc:cart-summary />
+        </div>
+    </div>
+    @*two columns one of width 3 and one of width 9*@
+    <div class="row m-1 p-2">
+        <div class="col-3">
+            <h2 class="display-4">Filters</h2>
             <vc:navigation-menu />
         </div>
         <div class="col-9">
             @RenderBody()
         </div>
+
     </div>
+
 </body>
 </html>
