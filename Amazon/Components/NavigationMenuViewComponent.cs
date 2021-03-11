@@ -21,7 +21,7 @@ namespace Amazon.Components
         public IViewComponentResult Invoke()
         {
             ViewBag.SelectedCategory = RouteData?.Values["category"];
-            return View(_repository.Books.Select(b => b.ClassificationCategory).Distinct().OrderBy(c => c));
+            return View(_repository.Books.Select(b => b.Category).Distinct().OrderBy(c => c));
         }
     }
 }

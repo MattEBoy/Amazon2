@@ -21,7 +21,7 @@ namespace Amazon.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pageNumber = 1)
         {
 
             //Program uses tag helpers to dynamically create the page navigation and displays 5 items per page
@@ -29,17 +29,17 @@ namespace Amazon.Controllers
             {
                 //superior filter on "like"
                 Books = _repository.Books
-                    .Where(b => category == null || b.ClassificationCategory.Contains(category)).OrderBy(b => b.BookID).Skip((page - 1) * PageSize).Take(PageSize)
+                    .Where(b => category == null || b.Category.Contains(category)).OrderBy(b => b.BookID).Skip((pageNumber - 1) * PageSize).Take(PageSize)
                     ,
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page
+                    CurrentPage = pageNumber
                         ,
                     ItemsPerPage = PageSize
                         ,
                     //superior filter on "like"
                     //Page numbering matches results
-                    TotalNumItems = _repository.Books.Where(b => category == null || b.ClassificationCategory.Contains(category)).Count()
+                    TotalNumItems = _repository.Books.Where(b => category == null || b.Category.Contains(category)).Count()
 
 
                 }

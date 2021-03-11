@@ -23,11 +23,14 @@ namespace Amazon
         {
             services.AddDbContext<BookDBContext>(optionsBuilder =>
             {
-                optionsBuilder.UseSqlServer(Configuration["ConnectionSTrings:AmazonConnection"]);
+                optionsBuilder.UseSqlite(Configuration["ConnectionSTrings:AmazonConnection"]);
             });
             services.AddControllersWithViews();
 
             services.AddScoped<IBookRepository, EFBookRepository>();
+            services.AddRazorPages();
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +48,7 @@ namespace Amazon
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
@@ -65,19 +69,21 @@ namespace Amazon
                 //As in the example, modify the Endpoints so that the user can add something like "/Books/Autobiography" onto the URL and get results. (NOTE: Does not need to follow that specific path.) (see below)
                 endpoints.MapControllerRoute(
                     "categpage",
-                    "category/{category}/books/{page:int}",
+                    "category/{category}/books/{pageNumber:int}",
                      new { Controller = "Home", action = "Index" });
                 //The app has the built -in functionality to filter by adding an argument to the controller(i.e. "/?category=autobiography) for the category (see below)
                 endpoints.MapControllerRoute(
                     "categ",
                     "category/{category}",
-                     new { Controller = "Home", action = "Index", page = 1});
+                     new { Controller = "Home", action = "Index", pageNumber = 1});
 
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "books/{page}",
+                    "books/{pageNumber}",
                     new { Controller = "Home", action = "Index" });
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
 
 

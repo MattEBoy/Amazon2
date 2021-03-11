@@ -31,7 +31,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Signet",
                         Price = 9.95m,
-                        ClassificationCategory = "Fiction, Classic",
+                        Classification = "Fiction",
+                        Category = "Classic",
                         TotalPages = 1488
                     },
                     new Book
@@ -43,7 +44,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "Kearns",
                         Publisher = "Simon & Schuster",
                         Price = 14.58m,
-                        ClassificationCategory = "Non-Fiction, Biography",
+                        Classification = "Non-Fiction",
+                        Category = "Biography",
                         TotalPages = 944
 
                     },
@@ -57,7 +59,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Bantam",
                         Price = 21.54m,
-                        ClassificationCategory = "Non-Fiction, Biography",
+                        Classification = "Non-Fiction",
+                        Category = "Biography",
                         TotalPages = 832
                     },
                     new Book
@@ -69,7 +72,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "C.",
                         Publisher = "Random House",
                         Price = 11.61m,
-                        ClassificationCategory = "Non-Fiction, Biography",
+                        Classification = "Non-Fiction", 
+                        Category = "Biography",
                         TotalPages = 864
                     },
                     new Book
@@ -81,7 +85,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Random House",
                         Price = 13.33m,
-                        ClassificationCategory = "Non-Fiction, Historical",
+                        Classification = "Non-Fiction",
+                        Category = "Historical",
                         TotalPages = 528
                     },
                     new Book
@@ -93,7 +98,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Vintage",
                         Price = 15.95m,
-                        ClassificationCategory = "Fiction, Historical Fiction",
+                        Classification= "Fiction",
+                        Category = "Historical Fiction",
                         TotalPages = 288
                     },
                     new Book
@@ -105,7 +111,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Grand Central Publishing",
                         Price = 14.99m,
-                        ClassificationCategory = "Non-Fiction, Self-Help",
+                        Classification = "Non-Fiction",
+                        Category = "Self - Help",
                         TotalPages = 304
                     },
                     new Book
@@ -117,7 +124,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Grand Central Publishing",
                         Price = 21.66m,
-                        ClassificationCategory = "Non-Fiction, Self-Help",
+                        Classification = "Non-Fiction",
+                        Category = "Self - Help",
                         TotalPages = 240
                     },
                     new Book
@@ -129,7 +137,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Portfolio",
                         Price = 29.16m,
-                        ClassificationCategory = "Non-Fiction, Business",
+                        Classification = "Non-Fiction",
+                        Category= "Business",
                         TotalPages = 400
                     },
                     new Book
@@ -141,7 +150,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Bantam",
                         Price = 15.03m,
-                        ClassificationCategory = "Fiction, Thrillers",
+                        Classification = "Fiction",
+                        Category = "Thrillers",
                         TotalPages = 642
                     },
                     //Three new books have been added to the database through the Seed Data
@@ -154,7 +164,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Penguin Group (USA) LLC",
                         Price = 8.29m,
-                        ClassificationCategory = "Fantasy Fiction, Adventure Fiction",
+                        Classification = "Fantasy Fiction",
+                        Category = "Adventure Fiction",
                         TotalPages = 268
                     },
                     new Book
@@ -166,7 +177,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "Tor Books",
                         Price = 14.79m,
-                        ClassificationCategory = "High Fantasy",
+                        Classification = "High Fantasy",
+                        Category = "Adventure Fiction",
                         TotalPages = 1005
                     },
                     //this last one is pretty good.
@@ -179,7 +191,8 @@ namespace Amazon.Models
                         AuthorMiddleInitial = "",
                         Publisher = "The Church of Jesus Christ of Latter Day Saints",
                         Price = 15.99m,
-                        ClassificationCategory = "Sacred Text",
+                        Classification = "Sacred Text",
+                        Category = "Sacred Text",
                         TotalPages = 779
                     }
                 );

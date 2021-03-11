@@ -5,8 +5,21 @@
     <td class="table-sm">@Model.Title</td>
     <td class="table-sm">@Model.AuthorLastName, @Model.AuthorFirstName @Model.AuthorMiddleInitial</td>
     <td class="table-sm">@Model.Publisher</td>
-    <td class="table-sm">@Model.ClassificationCategory</td>
+    <td class="table-sm">@Model.Category</td>
+    <td class="table-sm">@Model.Classification</td>
     <td class="table-sm">@Model.ISBN</td>
     <td class="table-sm">@Model.TotalPages</td>
     <td class="table-sm">$@Model.Price</td>
+    <td class="table-sm">
+        <form id="@Model.BookID" asp-page="/Cart" method="post">
+            <input type="hidden" asp-for="BookID" />
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+            <span class="card-text p-1">
+                @*@Model.Title*@
+                <button type="submit" class="btn-success btn-sm pull-right" sylte="float:right">Add to Cart</button>
+            </span>
+        </form>
+    </td>
+
 </tr>
+

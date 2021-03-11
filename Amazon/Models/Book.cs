@@ -18,7 +18,8 @@ namespace Amazon.Models
         public string AuthorMiddleInitial { get; set; }
         public string Publisher { get; set; }
         public decimal Price { get; set; }
-        public string ClassificationCategory { get; set; }
+        public string Classification { get; set; }
+        public string Category { get; set; }
         //Model has been updated to include the number of pages, and that data is reflected in the database
         public int TotalPages { get; set; }
 
@@ -32,7 +33,7 @@ namespace Amazon.Models
         //    this.Publisher = publisher;
         //    this.Price = price;
         //    this.ISBN = isbn;
-        //    this.ClassificationCategory = category;
+        //    this.Classification = category;
         //}
     }
 }

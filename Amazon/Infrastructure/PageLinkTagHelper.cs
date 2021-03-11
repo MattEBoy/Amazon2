@@ -47,7 +47,7 @@ namespace Amazon.Infrastructure
             {
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNumber"] = i;
                 
                 tag.Attributes["href"] = urlHelper.Action(PageAction, PageUrlValues);
 

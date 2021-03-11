@@ -1,0 +1,49 @@
+﻿@page
+@model Amazon.Pages.Shared.CartModel
+@{
+}
+
+<table class="table-striped tbody tr:nth-of-type(odd)">
+
+    <thead class="thead-dark">
+        <tr class="col-xl-9">
+
+            <td class="table-sm"><b>Title</b></td>
+            <td class="table-sm"><b>Quantity</b></td>
+            <td class="table-sm"><b>Price</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var line in Model.Cart.Lines)
+        {
+            <tr class="col-xl-9">
+                <td class="table-sm">@line.Book.Title</td>
+                <td class="table-sm">@line.Quantity</td>
+                <td class="table-sm">$@(@line.Book.Price*@line.Quantity)</td>
+                <td class="table-sm">
+                    <!--<form id="@line.Book.BookID" asp-page="/Remove" method="post">
+                    <input type="hidden" asp-for="line.Book.BookID" />
+                    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                    <span class="card-text p-1">-->
+                    @*@Model.Title*@
+                    <!--<button type="submit" class="btn-success btn-sm pull-right" sylte="float:right">Remove from Cart</button>
+                    </span>
+                </form>-->
+                </td>
+
+            </tr>
+
+        }
+    </tbody>
+    <tfoot>
+        <tr class="col-xl-9">
+            <td class="table-sm" colspan="3">Total: </td>
+            <td>@Model.Cart.ComputeCartTotal().ToString("c")</td>
+        </tr>
+    </tfoot>
+
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+</div>
